@@ -5,8 +5,8 @@
     <p>Happy New Year: { redpocket }</p>
   </div>
 
-  <button onclick={ redpocket }>money</button>
-  <button onclick={ candy }>no money</button>
+  <button onclick={ money }>money</button>
+  <button onclick={ candy }>candy</button>
 
 
   <script>
@@ -30,22 +30,22 @@
 
     checkStatus() {
       if (this.redpocket >= 70){
-        this.petImage = "angery";
-      } else if (this.redpocket <= 30){
-        this.petImage = "love";
+        this.emoji = "love";
+      } else if (this.redpocket <= 45){
+        this.emoji = "angery";
       }else{
-        this.petImage = "happy";
+        this.emoji = "happy";
       }
     }
 
 // functions that respond to events
     money() {
-      this.decMoney();
+      this.incMoney();
       this.checkStatus();
     }
 
-    nomoney() {
-      this.inMoney();
+    candy() {
+      this.decMoney();
       this.checkStatus();
     }
 
@@ -54,7 +54,7 @@
 
 
     window.setInterval(function(){
-      that.incMoney();
+      that.decMoney();
       console.log("wait");
       that.update();
       that.checkStatus();
@@ -64,13 +64,15 @@
   <style>
   /* styles that will be applied to the root level of my tag */
   :scope{
-    margin:auto;
+    margin:center;
+    color: white;
   }
 
   img{
     weight:auto;
     height:200px;
   }
+
 
   </style>
 

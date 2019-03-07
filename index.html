@@ -2,18 +2,70 @@
 <html lang="en">
 <head>
   <title>My emoji</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
+
+<style>
+  body {background-color: black}
+</style>
+
 
 <body>
 
 
+  <header></header>
   <emoji></emoji>
 
-  <script src="emoji.tag" type="riot/tag"></script>
+  <money></money>
+
+  <div>
+      <left></left>
+      <right></right>
+  </div>
+
+
+
+
+
+  <script src="tags/right.tag" type="riot/tag"></script>
+  <script src="tags/left.tag" type="riot/tag"></script>
+  <script src="tags/header.tag" type="riot/tag"></script>
+  <script src="tags/emoji.tag" type="riot/tag"></script>
+  <script src="tags/money.tag" type="riot/tag"></script>
+  <script src="tags/child.tag" type="riot/tag"></script>
+
 
   <script src="https://cdn.jsdelivr.net/npm/riot@3.8/riot+compiler.min.js"></script>
 
-  <script>riot.mount('*')</script>
+  <script>
+  var observable = riot.observable();
+  riot.mount('*');
+  </script>
+
+  <style>
+  body{
+    /* alinging emoji tag at center of body */
+    text-align: center;
+    /* adding padding space towards the inside of my html page */
+    padding: 10em;
+  }
+  .container{
+    margin: auto;
+    padding: 10px;
+  }
+
+  left{
+  float: left;
+  display: inline-block;
+  }
+
+  right{
+  margin-left: 600px;
+  }
+
+  </style>
 
 </body>
 </html>
